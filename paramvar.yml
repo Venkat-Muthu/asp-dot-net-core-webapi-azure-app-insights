@@ -14,4 +14,8 @@ stages:
       displayName: Show variables
       inputs:
         azureSubscription: 'ServiceConnection-subscription'
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          echo isBackend : ${{parameters.isBackend}}
         
