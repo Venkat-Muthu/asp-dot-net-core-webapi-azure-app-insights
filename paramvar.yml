@@ -1,0 +1,16 @@
+parameters:
+- name: isBackend          # name of the parameter; required
+  type: boolean            # see the enum data types in the following section
+  default: false          # default value; if no default, then the parameter MUST be given by the user at runtime
+
+stages:
+- stage: Stage1
+  displayName: Stage 1
+  jobs:
+  - job: ShowVariables
+    displayName: Show variables
+    steps:
+    - task: AzureCli@2
+      displayName: Show variables
+      inputs:
+        script: 'printenv'
