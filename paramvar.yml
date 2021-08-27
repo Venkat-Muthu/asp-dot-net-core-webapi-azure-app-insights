@@ -10,7 +10,8 @@ stages:
   - job: ShowVariables
     displayName: Show variables
     steps:
-    - task: AzureCli@2
+    - task: AzureCLI@2
       displayName: Show variables
       inputs:
-        script: 'printenv'
+        azureSubscription: 'ServiceConnection-subscription'
+        
