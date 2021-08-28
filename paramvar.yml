@@ -3,7 +3,6 @@ parameters:
   type: boolean            # see the enum data types in the following section
   default: false          # default value; if no default, then the parameter MUST be given by the user at runtime
 
-- name: Test
 steps:
   - task: AzureCLI@2
     displayName: Show variables
