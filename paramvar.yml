@@ -3,19 +3,13 @@ parameters:
   type: boolean            # see the enum data types in the following section
   default: false          # default value; if no default, then the parameter MUST be given by the user at runtime
 
-stages:
-- stage: Stage1
-  displayName: Stage 1
-  jobs:
-  - job: ShowVariables
+- name: Test
+steps:
+  - task: AzureCLI@2
     displayName: Show variables
-    steps:
-    - task: AzureCLI@2
-      displayName: Show variables
-      inputs:
-        azureSubscription: 'ServiceConnection-subscription'
-        scriptType: bash
-        scriptLocation: inlineScript
-        inlineScript: |
-          echo isBackend : ${{parameters.isBackend}}
-        
+    inputs:
+      azureSubscription: 'ServiceConnection-subscription'
+      scriptType: bash
+      scriptLocation: inlineScript
+      inlineScript: |
+        echo isBackend : ${{parameters.isBackend}}
