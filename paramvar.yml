@@ -13,7 +13,16 @@ steps:
       inlineScript: |
         echo isBackend : ${{parameters.isBackend}} - '"${{parameters.isBackend}}"' - '"True"'
         if [ '"${{parameters.isBackend}}"' == '"True"' ]; then
-          echo value is true
+          echo value is true-1
         else
-          echo value is false
+          echo value is false-1
         fi
+
+        if ('"${{parameters.isBackend}}"' == '"True"')
+        {
+            echo value is true-2
+        }
+        else
+        {
+            echo value is false-2
+        }
