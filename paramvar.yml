@@ -11,8 +11,8 @@ steps:
       scriptType: bash
       scriptLocation: inlineScript
       inlineScript: |
-        echo isBackend : ${{parameters.isBackend}} - '"${{parameters.isBackend}}"' - "True"
-        if [ '"${{parameters.isBackend}}"' == "True" ]; then
+        echo isBackend : ${{parameters.isBackend}} - '"${{parameters.isBackend}}"' - '"True"'
+        if [ '"${{parameters.isBackend}}"' == '"True"' ]; then
           echo value is true
         else
           echo value is false
