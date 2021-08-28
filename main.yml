@@ -10,15 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - template: paramvar.yml
   parameters:
     isBackend: True
 
-    
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- template: paramvar.yml
+  parameters:
+    isBackend: False
+
