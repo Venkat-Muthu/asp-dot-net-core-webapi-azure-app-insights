@@ -12,3 +12,8 @@ steps:
       scriptLocation: inlineScript
       inlineScript: |
         echo isBackend : ${{parameters.isBackend}}
+        if [ "${{parameters.isBackend}}" ]; then
+          echo value is true
+        else
+          echo value is false
+        fi
